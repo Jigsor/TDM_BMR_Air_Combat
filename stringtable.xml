@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="BMR TDM Air Combat">
+<Container name="BMR_TDM_Air_Combat_Stringtable">
+<Key ID="STR_BMR_Mission_Name">
+<Original>TDM BMR Air Combat</Original>
+<English>TDM BMR Air Combat</English>
+</Key>
+<Key ID="STR_BMR_onLoadMission">
+<Original>bmr-squad.com</Original>
+<English>bmr-squad.com</English>
+</Key>
+<Key ID="STR_BMR_overviewText">
+<Original>Kill All Enemy Air Units</Original>
+<English>Kill All Enemy Air Units</English>
+</Key>
+<Key ID="STR_BMR_UI_Respawn">
+<Original>Respawn</Original>
+<English>Respawn</English>
+<German>Respawn</German>
+<French>Réapparition</French>
+<Russian>Возрождение</Russian>
+<Spanish>Reaparición</Spanish>
+<Italian>Rigenerazione</Italian>
+<Polish>Odrodzenie</Polish>
+<Czech>Oživit</Czech>
+<Portuguese>Ressurgimento</Portuguese>
+<Korean>재투입</Korean>
+<Japanese>リスポーン</Japanese>
+</Key>
+<Key ID="STR_BMR_UI_close_dialog">
+<Original>Exit</Original>
+<English>Exit</English>
+<German>Ausgang</German>
+<French>Sortie</French>
+<Russian>экзитус</Russian>
+<Spanish>Salida</Spanish>
+</Key>
+<Key ID="STR_BMR_UI_view_settings">
+<Original>View Distance</Original>
+<English>View Distance</English>
+<German>Sichtweite</German>
+<French>Paramètres d'affichage</French>
+<Russian>Расстояние взгляда</Russian>
+<Spanish>Vista Distancia</Spanish>
+<Portuguese>Ver Distância</Portuguese>
+<Korean>가시거리</Korean>
+<Japanese>可視距離:</Japanese>
+</Key>
+<Key ID="STR_BMR_UI_toggle_heading">
+<Original>Toggle Heading</Original>
+<English>Toggle Heading</English>
+<German>Fahrtrichtungsanzeiger</German>
+<French>Direction</French>
+<Russian>направление</Russian>
+<Spanish>Dirección</Spanish>
+</Key>
+<Key ID="STR_BMR_UI_status_hud">
+<Original>Status HUD</Original>
+<English>Status HUD</English>
+<German>Status</German>
+<French>Statut</French>
+<Russian>Статус</Russian>
+<Spanish>Estado</Spanish>
+</Key>
+<Key ID="STR_BMR_UI_earPlugs">
+<Original>Ear Plugs</Original>
+<English>Ear Plugs</English>
+<German>Ohrstöpsel</German>
+<French>Des bouchons d'oreilles</French>
+<Russian>беруши</Russian>
+<Spanish>Tapones de Oídos</Spanish>
+</Key>
+<Key ID="STR_BMR_UI_Friendly_3D_Icons">
+<Original>Friendly 3D Icons</Original>
+<English>Friendly 3D Icons</English>
+<German>Freundliche 3D-Icons</German>
+<French>Icônes 3D Amicales</French>
+<Russian>Дружественные 3D Иконки</Russian>
+<Spanish>Iconos 3D Amigables</Spanish>
+</Key>
+<Key ID="STR_BMR_ON">
+<Original>On</Original>
+<English>On</English>
+<German>Auf</German>
+<French>Sur</French>
+<Russian>вкл</Russian>
+<Spanish>Dentro</Spanish>
+</Key>
+<Key ID="STR_BMR_OFF">
+<Original>Off</Original>
+<English>Off</English>
+<German>Aus</German>
+<French>De</French>
+<Russian>выкл</Russian>
+<Spanish>Apagado</Spanish>
+</Key>
+<Key ID="STR_BMR_intro_tip1">
+<Original>Press U key for Group Manager</Original>
+<English>Press U key for Group Manager</English>
+<German>Drücke Taste U für Gruppenmanager</German>
+<French>Appuyez sur la touche U pour le gestionnaire de groupe</French>
+<Russian>Нажмите клавишу у для Диспетчера Групп</Russian>
+<Spanish>Pulse la tecla U para el Administrador de Grupo</Spanish>
+</Key>
+<Key ID="STR_BMR_intro_tip2">
+<Original>Press H key for Graphic Settings, Digital Heading and HUD</Original>
+<English>Press H key for Graphic Settings, Digital Heading and HUD</English>
+<German>Drücken Sie die H-Taste für Grafikeinstellungen, Richtungs- und Statusanzeige</German>
+<French>Appuyez sur la touche H pour les paramètres graphiques, boussole numérique et état</French>
+<Russian>Нажмите Ч, чтобы настроить графику, направление и статус отображения</Russian>
+<Spanish>Empuje la tecla H para ajustes los gráficos, el compás digital y el estatus</Spanish>
+</Key>
+</Container>
+</Project>
