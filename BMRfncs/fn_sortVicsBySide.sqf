@@ -10,7 +10,7 @@ if (_westVics isEqualTo []) then {_empty = _empty +1};
 private _indiVics = _mixedPool select {(getNumber(configFile >> "cfgVehicles" >> _x >> "side")) isEqualTo 2};
 if (_indiVics isEqualTo []) then {_empty = _empty +1};
 
-if (_empty > 0) then {//Make some comprimises
+if (_empty > 0) then {//Make some compromises
 	if !(_indiVics isEqualTo []) then {//Independant vehicles available
 		if (_westVics isEqualTo []) then {_westVics = _indiVics};//If no West vehicles available then use Independant
 		if (_eastVics isEqualTo []) then {_eastVics = _indiVics};//If no East vehicles available then use Independant

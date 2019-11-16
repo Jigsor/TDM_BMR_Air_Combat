@@ -1,4 +1,4 @@
-//Edit these 2 lists below to not allow certain air vehicles. Typically these do not have any or appropriate.
+//Edit these 2 lists below to not allow certain air vehicles. Typically these do not have any weapons or appropriate weapons.
 //Some weaponless vehicles are allready fitered out by config check in fn_vehiclePool.sqf so no need to add weaponless vehicles to black lists, but some vehicles may only have guns on one side/tail like spooky variants for ex. So you may want to add them to blacklists manually.
 
 _heli_BlackList = [
