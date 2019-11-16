@@ -2,38 +2,58 @@ params ["_unit","_corpse"];
 
 deleteVehicle _corpse;
 
-private _type = selectRandom (missionNameSpace getVariable "BMR_AircraftPool");
+private _pool = missionNameSpace getVariable ["BMR_AircraftPool", []];
+private _side = missionNameSpace getVariable ["BMR_registeredSide", side player];
+private _sideVehPool = [];
+private _type = "";
+
+if (BMR_useVehSide isEqualTo 1 && {count _pool > 1} && {!(_pool isEqualTypeAll "")}) then {
+	_sideVehPool = [_pool # 0, _pool # 1] select (_side isEqualTo WEST);
+	_type = selectRandom _sideVehPool;
+}
+else
+{
+	_type = selectRandom _pool;
+};
+
 if !(isClass(configFile >> "CfgVehicles" >> _type)) exitWith {0 spawn BMR_AC_fnc_missingMods};
 
-private _centPos = getPosASL task1;
-private _height = if (_type isKindOf "Plane") then {selectRandom [400,500,600,700,800]} else {selectRandom [100,200,300,400,500]};
-private _speed = if (_type isKindOf "Plane") then {
-	private _landingSpeed = getNumber (configFile >> "CfgVehicles" >> _type >> "landingSpeed");
-	(round(_landingSpeed / 2)) + _landingSpeed
-} else {65};
-private _randPos = _centPos getPos [1000 * sqrt (1 - abs random [-1, 0, 1]), random 360];
+private _isPlane = _type isKindOf "Plane";
+private _height = if (_isPlane) then {selectRandom [400,500,600,700,800]} else {selectRandom [100,200,300,400,500]};
+private _landingSpeed = 1;
+private _speed = 65;
+if (_isPlane) then {
+	_landingSpeed = getNumber (configFile >> "CfgVehicles" >> _type >> "landingSpeed");
+	_speed = ((round(_landingSpeed / 2)) + _landingSpeed) max 150;
+};
+
+private _randPos = (getPosASL task1) getPos [1000 * sqrt (1 - abs random [-1, 0, 1]), random 360];
 private _veh = createVehicle [_type, _randPos, [], _height, "FLY"];
 private _spawnDir = _veh getDir task1;
 
 _veh setdir _spawnDir;
 _veh setpos [(_randPos # 0) + (sin (_spawnDir -180)), (_randPos # 1) + (cos (_spawnDir -180)), _height];
-_veh setVelocityModelSpace [0, _speed, 0];
+_veh setVectorUp [0,0,1];
+_veh setVelocityModelSpace [0, (_speed/3.6), 0];
 
-createVehicleCrew _veh;
+private _origGrp = createVehicleCrew _veh;
+_origGrp deleteGroupWhenEmpty true;
 private _driver = driver _veh;
+private _driverType = typeOf _driver;
 
-_unit setUnitLoadout (typeOf _driver);
-_unit linkItem "ItemGPS";
+if ((count units _origGrp) > 1) then {
+	_grp = createGroup _side;
+	{[_x] joinSilent _grp;} forEach (crew _veh);
+	[_grp] remoteExec ["BMR_AC_fnc_slaveGroup", 2];
+	missionNameSpace setVariable ["BMR_crewGrp", _grp];
+	_grp setCombatMode "RED";
+};
 
-//deleteVehicle _driver; //RHS fixed wing will auto eject when deleting driver..wtf?
-//_veh deleteVehicleCrew driver _veh;
+//_veh deleteVehicleCrew driver _veh;//RHS fixed wing will auto eject when deleting driver..wtf?
 _driver setDamage 1;
 
-_grp = createGroup (missionNameSpace getVariable ["BMR_playerSide", side _unit]);
-{[_x] joinSilent _grp;} forEach (crew _veh);
-_grp setVariable ["BMR_grpSkip",true];
-_grp setCombatMode "RED";
-
+_unit setUnitLoadout _driverType;
+_unit linkItem "ItemGPS";
 _unit moveInDriver _veh;
 
 _veh addEventHandler ["GetOut", {
@@ -47,10 +67,15 @@ _veh addEventHandler ["GetOut", {
 
 if (!isNull _driver) then {deleteVehicle _driver};
 
-if !(isLightOn objectParent _unit) then {objectParent _unit setPilotLight true};
-if !(isCollisionLightOn objectParent _unit) then {_unit action ["CollisionLightOn", objectParent _unit]};
-if ((["BMR_autoFlare", 1] call BIS_fnc_getParamValue) isEqualTo 1) then {
-	_veh addAction [("<t color='#ff9900'>") + "Auto Countermeasure", {call BMR_AC_fnc_autoCountermeasure}, [], 7.9, false, false, '', '_target == (vehicle _this)'];
+private _vehObj = objectParent _unit;
+if !(isLightOn _vehObj) then {_vehObj setPilotLight true};
+if !(isCollisionLightOn _vehObj) then {_unit action ["CollisionLightOn", _vehObj]};
+if (_type in BMR_ManualFire) then {
+	if !(isManualFire _vehObj) then {_unit action ["ManualFire", _vehObj]};
+};
+
+if (BMR_autoFlare isEqualTo 1) then {
+	_veh addAction [("<t color='#ff9900'>") + (localize 'STR_BMR_AutoCountermeasure') + "</t>", {call BMR_AC_fnc_autoCountermeasure}, [], 7.9, false, false, '', '_target == (vehicle _this)'];
 };
 
 showChat true;

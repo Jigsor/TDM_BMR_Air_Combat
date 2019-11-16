@@ -7,7 +7,7 @@ if (surfaceIsWater _hoopPos) then {
 	};
 };
 serviceHoop setDir (_hoopPos getDir task1) - 90;
-private _rHeight = [50,500] call BIS_fnc_randomInt;
+private _rHeight = floor linearConversion [0, 1, random 1, 50 min 500, 500 max 50 + 1];
 _hoopPos set [2,_rHeight];
 serviceHoop setPos _hoopPos;
 serviceHoop setVectorUp [0,0,1];

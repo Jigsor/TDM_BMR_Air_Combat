@@ -2,9 +2,11 @@ if (!canSuspend) exitWith {
 	0 spawn BMR_AC_fnc_serverMainThread;
 };
 
+waitUntil {time > 5};
+
 private _winnerSide = Civilian;
 private _startTime = diag_tickTime;
-private _endTime = (missionDuration * 60);
+private _endTime = (BMR_missionLength * 60);
 private _c = 0;
 BMR_AIvehCount = 0;
 

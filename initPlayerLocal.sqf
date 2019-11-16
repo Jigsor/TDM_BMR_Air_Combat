@@ -1,15 +1,20 @@
 params ["_player", "_isJIP"];
 
-waitUntil {!isNull player && isPlayer player};
+if (!isServer && {isNil "BMR_poolTypes"}) then {call BMR_AC_fnc_missionParameters};//func runs preinit. Why do I need to call it again postinit on client? wtf?
+
+waitUntil {!isNull player && {isPlayer player}};
 
 #include "add_diary.sqf"
 
+call BMR_AC_fnc_registerPlayerSide;
+
 player setVariable ["BIS_noCoreConversations", true];
 BMR_editor_Pgrp = groupId (group player);
+player setSpeaker "NoVoice";
 player addRating 100000;
 setTerrainGrid 50;
 {_x setMarkerAlphaLocal 0} forEach ["respawn_east","respawn_west"];
-disableMapIndicators [false,true,false,false];
+disableMapIndicators [false,true,true,false];
 enableEnvironment [false, (environmentEnabled # 1)];
 enableSentences false;
 status_hud_on = false;
@@ -24,8 +29,6 @@ waitUntil {!isNull (findDisplay 46)};
 ("BMR_Layer" call BIS_fnc_rscLayer) cutRsc ["bmr_intro", "PLAIN"];
 
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
-
-missionNameSpace setVariable ["BMR_registeredSide", playerSide];
 
 player addEventhandler ["killed", {call BMR_AC_fnc_playerKilled}];
 player addEventhandler ["respawn", {call BMR_AC_fnc_playerRespawn}];
@@ -50,11 +53,12 @@ if !(_savedVD isEqualTo 1600) then {
 	setObjectViewDistance [_savedVD, 100];
 };
 
-if (isNil {missionNameSpace getVariable "BMR_AircraftPool"}) then {
+if (isNil {missionNameSpace getVariable "BMR_AircraftPool"}) then {//most likely not needed.
 	[] remoteExec ['BMR_AC_fnc_vehiclePool', 2];
 	sleep 3;
 	if (alive player) then {player setdamage 1};
 	waitUntil {alive player};
 };
 
+call BMR_AC_fnc_friendly3DIcon;
 0 spawn BMR_AC_fnc_vehicleServiceNheal;

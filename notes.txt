@@ -26,6 +26,16 @@ TDM_BMR_Air_Combat.Altis v0.986
 TDM_BMR_Air_Combat.Altis v0.99
 9/25/2019
 TDM_BMR_Air_Combat.Altis v0.991
+10/7/2019
+TDM_BMR_Air_Combat.Altis v0.992
+10/12/2019
+TDM_BMR_Air_Combat.Altis v0.993
+10/27/2019
+TDM_BMR_Air_Combat.Altis v0.994
+11/3/2019
+TDM_BMR_Air_Combat.Altis v0.995
+11/16/2019
+TDM_BMR_Air_Combat.Altis v0.996
 
 Porting Instructions:
 1. Create a blank new mission, save.

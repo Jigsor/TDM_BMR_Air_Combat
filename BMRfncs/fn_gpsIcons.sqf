@@ -2,9 +2,7 @@ if (isNull (uiNamespace getVariable ["RscCustomInfoMiniMap", displayNull])) exit
 disableSerialization;
 private _keyOver = false;
 if (inputAction "MiniMapToggle" > 0) then {//"ListLeftVehicleDisplay","ListRightVehicleDisplay"
-	private _display = uiNamespace getVariable ["RscCustomInfoMiniMap", displayNull];
-	private _miniMapControlGroup = _display displayCtrl 13301;
-	private _miniMap = _miniMapControlGroup controlsGroupCtrl 101;
+	private _miniMap = (((uiNamespace getVariable ["RscCustomInfoMiniMap", displayNull]) displayCtrl 13301) controlsGroupCtrl 101);
 	if (missionNameSpace getVariable ["BMR_gpsIcons", false]) then {
 		_miniMap ctrlRemoveEventHandler ["Draw", BMR_miniMap];
 		missionNameSpace setVariable ["BMR_gpsIcons", false];

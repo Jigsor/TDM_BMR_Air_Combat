@@ -9,5 +9,8 @@ BMR_vanillaAirCraft = ["B_Heli_Light_01_dynamicLoadout_F","O_Heli_Light_02_dynam
 // Aircraft lacking chaff
 BMR_add_Chaff = ["B_Heli_Light_01_F","B_Heli_Light_01_armed_F","B_Heli_Light_01_stripped_F","B_Heli_Light_01_dynamicLoadout_F","CUP_B_AH6M_USA","CUP_B_MH6M_USA"];
 
+// Aircraft wich require Manual Fire action in order to fire. Mission will auto switch these to Manual Fire. This is for convenience and not required.
+BMR_ManualFire = ["O_T_VTOL_02_infantry_dynamicLoadout_F","O_T_VTOL_02_vehicle_dynamicLoadout_F"];
+
 BMR_Op4_side = EAST;
 BMR_Blu4_side = WEST;

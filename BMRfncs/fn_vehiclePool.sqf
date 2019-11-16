@@ -1,6 +1,6 @@
 // call BMR_AC_fnc_vehiclePool;
 if (!isServer) exitWith {};
-if (aircraftPoolType > 1) exitWith {call BMR_AC_fnc_vehWhiteList};
+if (BMR_poolTypes > 1) exitWith {call BMR_AC_fnc_vehWhiteList};
 
 _helicopters = [];
 _planes = [];
@@ -22,7 +22,7 @@ _allVehicleClasses = (configFile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses
 						_helicopters pushBack _className;
 					};
 				};
-				case(_className isKindOf "Plane") : {
+				case (_className isKindOf "Plane") : {
 					_weps = [_className] call BMR_AC_fnc_leathalWeapons;
 					if !(_weps isEqualTo []) then {
 						_planes pushBack _className;
@@ -34,5 +34,10 @@ _allVehicleClasses = (configFile >> "CfgVehicles") call BIS_fnc_getCfgSubClasses
 	};
 } forEach (_allVehicleClasses);
 
-_pool = [_helicopters, _planes] select aircraftPoolType;
+_pool = [_helicopters, _planes] select BMR_poolTypes;
+
+if (BMR_useVehSide isEqualTo 1 && {count _pool > 1}) then {
+	_pool = [_pool] call BMR_AC_fnc_sortVicsBySide;
+};
+
 missionNameSpace setVariable ["BMR_AircraftPool", _pool, true];

@@ -12,8 +12,11 @@ class BMR_AC
 		class vehWhiteList {};
 		class vehBlackList {};
 		class leathalWeapons {};
+		class sortVicsBySide {};
 		class logMissionParameters {};
 		class logVehPool {};
+		class seaBattle {};
+		class registerPlayerSide {};
 		class serverMainThread {};
 		class randHoopPos {};
 		class serverJanitor {};
@@ -23,6 +26,7 @@ class BMR_AC
 		class vehTexturesGlobal {};
 		class playerRespawn {};
 		class playerKilled {};
+		class slaveGroup {};
 		class planeReverse {};
 		class autoCountermeasure {};
 		class earPlugs {};
@@ -38,6 +42,7 @@ class BMR_AC
 		class spawnAIair {};
 		class aiRegulator {};
 		class aircraftMasochism {};
+		class flak {};
 		class missionEnd {};
 	};
 };

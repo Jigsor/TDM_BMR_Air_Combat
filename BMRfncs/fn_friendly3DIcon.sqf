@@ -5,9 +5,9 @@ if (missionNamespace getVariable ["BMR_friendly3dMark", true]) then {
 		_fvd = vehicles select {!isNull driver _x && {side group _x isEqualTo side player && !(objectparent player isEqualTo _x)}};
 		{
 			drawIcon3D [
-				"a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
+				'a3\ui_f\data\igui\cfg\cursors\select_ca.paa',
 				BMRsideColor,
-				_x modelToWorldVisual (_x selectionPosition "Spine3"),
+				_x modelToWorldVisual (_x selectionPosition 'Spine3'),
 				0.5,
 				0.5,
 				0

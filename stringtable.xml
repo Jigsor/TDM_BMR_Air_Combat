@@ -110,5 +110,13 @@
 <Russian>Нажмите Ч, чтобы настроить графику, направление и статус отображения</Russian>
 <Spanish>Empuje la tecla H para ajustes los gráficos, el compás digital y el estatus</Spanish>
 </Key>
+<Key ID="STR_BMR_AutoCountermeasure">
+<Original>Auto Countermeasure</Original>
+<English>Auto Countermeasure</English>
+<German>Automatische Gegenmaßnahme</German>
+<French>Contre-mesure Automatique</French>
+<Russian>Автоматическая контрмера</Russian>
+<Spanish>Contramedida Automática</Spanish>
+</Key>
 </Container>
 </Project>

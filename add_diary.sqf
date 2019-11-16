@@ -63,6 +63,7 @@ _info = _info +"
 	<br/>Add helicopter and planes class names in fn_vehBlackList.sqf to black list useless aircraft in this case typically lacking weapons.
 	<br/>The mission will automatically try to remove weaponless types but in some cases they are not removed for reasons.
 	<br/>
-	<br/>Warning! Zeusing in any NPCs will break the AI regulation system if AI Aircraft is enabled in parameters.
+	<br/>Warning! Zeusing in any NPCs may break the AI regulation system if AI Aircraft is enabled in parameters.
+	<br/>If you insist on Zeusing via any means, then best to only create Independent units or change side of units to Independent. Independant will be enemy to Blufor and Opfor.
 ";
 player createDiaryRecord ["Diary", ["INFO", _info]];

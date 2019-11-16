@@ -1,0 +1,107 @@
+Author = "Jigsor =BMR=";
+loadScreen = "images\bmrflag.paa";
+onLoadName = $STR_BMR_Mission_Name;
+onLoadMission = $STR_BMR_onLoadMission;
+onLoadMissionTime = false;
+overviewText = $STR_BMR_overviewText;
+overviewPicture = "images\bmrflag.paa";
+
+enableDebugConsole      = 1;// 0 = Default behavior, available only in editor, 1 = Available in SP and for hosts / logged in admins, 2 = Available for everyone
+allowFunctionsRecompile = 0;// 0 = Default behavior all funtions final, 1 = allow Recompile.
+allowFunctionsLog       = 1;// Allow functions to log to rpt. 0 = Default behavior Disable, 1 = Enable.
+DisabledAI              = 1;// 0 = Default fills empty playable slots with AI, 1 = Don't fill the empty playable slots.
+joinUnassigned          = 0;// 0 = Forces joining players into the first empty slot, 1 = leaves player to select their own.
+Respawn                 = 3;// Base
+RespawnDelay            = 3;
+RespawnDialog           = 0;// Show scoreboard at death. 0 = disabled; 1 = enabled (default)
+showGPS                 = 1;// Allow GPS
+showCompass             = 1;// Allow Compass
+showMap                 = 1;// Allow Map
+showWatch               = 1;// Allow Watch
+forceRotorLibSimulation = 0;// Default value: 0 = options based, 1 = force enable, 2 = force disable
+aiKills                 = 1;// Default value: 0 = disabled, 1 = enabled
+respawnOnStart          = 1;// 1 = Respawn on start
+
+class Header
+{
+	gameType = TDM;
+	minPlayers = 1;
+	maxPlayers = 30;
+	playerCountMultipleOf = 2;
+};
+
+#include "Hpp\Parameters.hpp"
+#include "ACui\Jig_Defines.hpp"
+#include "ACui\Jig_Dialogs.hpp"
+
+class CfgFunctions
+{
+	#include "Hpp\CfgFunctions.hpp"
+	#include "ACui\ACuiFunctions.hpp"
+};
+
+class CfgDebriefing
+{
+	class END1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "Your Team Wins";
+		pictureBackground = "images\bmrflag.paa";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class END2
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "Your Team Lost";
+		pictureBackground = "images\bmrflag.paa";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class END3
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "Battle Was A Stalemate";
+		pictureBackground = "images\bmrflag.paa";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class END4
+	{
+		title = "Missing Mods";
+		description = "This machine is missing required mod(s). Check mod installations and try again.";
+		picture = "";
+	};
+};
+
+class RscTitles {
+    titles[]={};
+    class bmr_intro
+    {
+        idd = -1;
+        movingEnable = 0;
+        duration = 10;
+        fadein = 2;
+        fadeout = 2;
+        name = "bmr_intro";
+        controls[] = {"title1"};
+
+		class title1
+		{
+			idc = -1;
+			type = 0;
+			style = "48 + 0x800";
+			size = 1;
+			font = "PuristaMedium";
+			sizeEx = 1;
+			text = "images\bmraircombat.paa";
+			x = 0.270833 * safezoneW + safezoneX;
+			y = 0.00103999 * safezoneH + safezoneY;
+			w = 0.458333 * safezoneW;
+			h = 0.999999 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0};
+		};
+	};
+	#include "ACui\ICE_defines.hpp"
+};

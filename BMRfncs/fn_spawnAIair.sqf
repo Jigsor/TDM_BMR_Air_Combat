@@ -3,13 +3,23 @@ params ["_side"];
 
 BMR_AIvehCount = BMR_AIvehCount +1;
 
-//if (canSuspend) then {sleep (3 + (random 15))};
-
 private _spawnOrientation = call BMR_AC_fnc_aiSpawnPos;
 _spawnOrientation params ["_sPos","_sDir"];
 
-private _type = selectRandom (missionNameSpace getVariable "BMR_AircraftPool");
-private _speed = if (_type isKindOf "Plane") then {180} else {65};
+private _pool = missionNameSpace getVariable ["BMR_AircraftPool", []];
+private _sideVehPool = [];
+private _type = "";
+
+if (BMR_useVehSide isEqualTo 1 && {count _pool > 1} && {!(_pool isEqualTypeAll "")}) then {
+	_sideVehPool = [_pool # 0, _pool # 1] select (_side isEqualTo WEST);
+	_type = selectRandom _sideVehPool;
+}
+else
+{
+	_type = selectRandom _pool;
+};
+
+private _speed = [65,180] select (_type isKindOf "Plane");
 
 private _vehicle = [_sPos,_sDir,_type,_side] call BIS_fnc_spawnVehicle;
 _vehicle params ["_veh","","_vehgrp"];
@@ -22,4 +32,5 @@ _veh addeventhandler ["Killed", {BMR_AIvehCount = BMR_AIvehCount -1}];
 _veh addEventHandler ["GetOut", {params ["","","_unit"]; deleteVehicle _unit}];
 {_x addeventhandler ["Killed", {params ["_unit"]; deleteVehicle _unit}]} forEach (units _vehgrp);
 
+[_veh,_type] call BMR_AC_fnc_customPylonLoadouts;
 _veh spawn BMR_AC_fnc_aircraftMasochism;
