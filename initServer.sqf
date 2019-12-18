@@ -4,7 +4,7 @@ addMissionEventHandler ["HandleDisconnect", {params ["_unit"]; deleteVehicle _un
 
 waitUntil {time > 1};
 
-diag_log "BMR Air Combat v0.996";
+diag_log "BMR Air Combat v0.997";
 
 call BMR_AC_fnc_logMissionParameters;
 call BMR_AC_fnc_logVehPool;
