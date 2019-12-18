@@ -45,6 +45,7 @@ private _trashEntities = entities [[
 	"rhs_vs1_seat",
 	"rhs_a10_acesII_seat",
 	"rhs_k36d5_seat",
+	"RHS_JST_A29_Ejection_Seat",
 	"CUP_B_Ejection_Seat_A10_USA",
 	"CUP_AV8B_EjectionSeat",
 	"CUP_AirVehicles_EjectionSeat",

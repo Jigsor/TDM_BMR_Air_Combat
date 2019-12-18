@@ -29,6 +29,8 @@ _pool = [
 	["B_Plane_Fighter_01_Stealth_F","O_Plane_Fighter_02_Stealth_F"],
  // RHS F-22 Raptor
 	["rhsusf_f22"],
+ // RHS Super Tucano.
+	["RHSGREF_A29B_HIDF"],
  // RHS Little Bird (MELB_AH6M)
 	["RHS_MELB_AH6M"],
  // CUP AW159 Wildcat

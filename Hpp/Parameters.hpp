@@ -10,7 +10,7 @@ class Params
 	class BMR_poolTypes//1
 	{
 	title = "		Aircraft Pool Types";
-	values[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+	values[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
 	texts[]=
 	{
 		"Random Helicopters",
@@ -25,6 +25,7 @@ class Params
 		"Vanilla To-201 Shikra (Stealth)",
 		"Vanilla F/A-181 Black Wasp II (Stealth) and Vanilla To-201 Shikra (Stealth)",
 		"RHS F-22 Raptor. Mod Requirements: @RHSUSAF",
+		"RHS Super Tucano. Mod Requirements: @RHSAFRF;@RHSUSAF;@RHSGREF",
 		"RHS Little Bird (MELB_AH6M). Mod Requirements: @RHSUSAF",
 		"CUP AW159 Wildcat. Mod Requirements: @CBA_A3;@cup_units;@cup_weapons;@cup_vehicles",
 		"Random Sab's Modern Light Fixed Wing Fighters. Mod Requirements: @Military Aviation",

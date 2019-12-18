@@ -1,3 +1,9 @@
+TDM BMR Air Combat
+by Jigsor
+Released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+http://creativecommons.org/licenses/by-nc/4.0/
+
 12/24/2018
 TDM_BMR_Air_Combat.Altis v0.9
 1/1/2019
@@ -36,6 +42,8 @@ TDM_BMR_Air_Combat.Altis v0.994
 TDM_BMR_Air_Combat.Altis v0.995
 11/16/2019
 TDM_BMR_Air_Combat.Altis v0.996
+12/17/2019
+TDM_BMR_Air_Combat.Altis v0.997
 
 Porting Instructions:
 1. Create a blank new mission, save.
