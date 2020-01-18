@@ -1,10 +1,12 @@
+//TDM BMR Air Combat by Jigsor
+
 addMissionEventHandler ["HandleDisconnect", {params ["_unit"]; deleteVehicle _unit}];
 
 ["Initialize", [true]] call BIS_fnc_dynamicGroups;
 
 waitUntil {time > 1};
 
-diag_log "BMR Air Combat v1";
+diag_log "BMR Air Combat v1.0";
 
 call BMR_AC_fnc_logMissionParameters;
 call BMR_AC_fnc_logVehPool;
