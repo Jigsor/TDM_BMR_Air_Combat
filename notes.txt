@@ -1,10 +1,13 @@
-1/17/2020
+1/18/2020
 TDM BMR Air Combat v1
 by Jigsor
 
 Released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
 http://creativecommons.org/licenses/by-nc/4.0/
+
+github:
+https://github.com/Jigsor/TDM_BMR_Air_Combat
 
 Porting Instructions:
 1. Create a blank new mission, Give it a name and save.
