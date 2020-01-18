@@ -19,7 +19,7 @@ class Params
 		"Vanilla WY-55 Hellcat",
 		"Vanilla A-164 Wipeout",
 		"Vanilla F/A-181 Black Wasp II (Stealth)",
-		"Vanill A 143 Buzzard",
+		"Vanilla A-143 Buzzard",
 		"Vanilla 149 Gryphon",
 		"Vanilla To-199 Neophron",
 		"Vanilla To-201 Shikra (Stealth)",

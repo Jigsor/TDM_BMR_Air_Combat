@@ -1,53 +1,15 @@
-TDM BMR Air Combat
+1/17/2020
+TDM BMR Air Combat v1
 by Jigsor
+
 Released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
 http://creativecommons.org/licenses/by-nc/4.0/
 
-12/24/2018
-TDM_BMR_Air_Combat.Altis v0.9
-1/1/2019
-TDM_BMR_Air_Combat.Altis v0.93
-1/2/2019
-TDM_BMR_Air_Combat.Altis v0.94
-1/6/2019
-TDM_BMR_Air_Combat.Altis v0.95
-1/8/2019
-TDM_BMR_Air_Combat.Altis v0.96
-2/17/2019
-TDM_BMR_Air_Combat.Altis v0.97
-3/24/2019
-TDM_BMR_Air_Combat.Altis v0.98
-5/11/2019
-TDM_BMR_Air_Combat.Altis v0.982
-5/17/2019
-TDM_BMR_Air_Combat.Altis v0.983
-6/1/2019
-TDM_BMR_Air_Combat.Altis v0.984
-6/3/2019
-TDM_BMR_Air_Combat.Altis v0.985
-7/20/2019
-TDM_BMR_Air_Combat.Altis v0.986
-9/23/2019
-TDM_BMR_Air_Combat.Altis v0.99
-9/25/2019
-TDM_BMR_Air_Combat.Altis v0.991
-10/7/2019
-TDM_BMR_Air_Combat.Altis v0.992
-10/12/2019
-TDM_BMR_Air_Combat.Altis v0.993
-10/27/2019
-TDM_BMR_Air_Combat.Altis v0.994
-11/3/2019
-TDM_BMR_Air_Combat.Altis v0.995
-11/16/2019
-TDM_BMR_Air_Combat.Altis v0.996
-12/17/2019
-TDM_BMR_Air_Combat.Altis v0.997
-
 Porting Instructions:
-1. Create a blank new mission, save.
+1. Create a blank new mission, Give it a name and save.
 2. Open Altis Version and Copy all Blufor units, all opfor units and service hoop. These can be pasted anywhere in editor on new version. Positions of these objects are not really important but recomend placing playable units far from battle zone center.
 3. Copy Task module from Altis version and paste into new version. Position this module where you would like the center of the battle to be. Adjust the height appropriately. If set to low the AI and players may crash into ground or terrain objects after spawn.
 4. Set all weather options in editor to manual override via checkmarks with exception of Lightnings. Attributes -> Edit: Enviroment -> Rain, Waves, Wind.
-5. Save mission.
+5. Copy all scripts except mission.sqm from altis version and paste them into your new mission folder.
+6. Save mission.
